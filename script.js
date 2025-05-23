@@ -38,8 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
         currentGridCols = N_cols > 1 ? N_cols : 2; // Ensure at least 2
 
         // Recalculate cellSize based on new dimensions
-        const availableWidth = canvas.width.baseVal.value - 2 * canvasPadding;
-        const availableHeight = canvas.height.baseVal.value - 2 * canvasPadding;
+        let svgWidth = canvas.width.baseVal.value;
+        let svgHeight = canvas.height.baseVal.value;
+
+        if (svgWidth === 0 && canvas.getAttribute('width')) {
+            svgWidth = parseInt(canvas.getAttribute('width'));
+        }
+        if (svgHeight === 0 && canvas.getAttribute('height')) {
+            svgHeight = parseInt(canvas.getAttribute('height'));
+        }
+
+        const availableWidth = svgWidth - 2 * canvasPadding;
+        const availableHeight = svgHeight - 2 * canvasPadding;
         
         const cellWidth = availableWidth / (currentGridCols - 1);
         const cellHeight = availableHeight / (currentGridRows - 1);
