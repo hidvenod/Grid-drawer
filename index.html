@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector Drawing Tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Vector Drawing Tool</h1>
+    <div id="controls">
+        <button id="togglePoints">Toggle Points</button>
+        <label for="gridRows">Rows:</label>
+        <input type="number" id="gridRows" value="5" min="2" max="20">
+        <label for="gridCols">Cols:</label>
+        <input type="number" id="gridCols" value="5" min="2" max="20">
+        <button id="updateGrid">Update Grid</button>
+        <label for="lineColor">Line Color:</label>
+        <input type="color" id="lineColor" value="#000000">
+        <label for="fillColor">Fill Color:</label>
+        <input type="color" id="fillColor" value="#ffffff">
+        <label for="bgColor">Background Color:</label>
+        <input type="color" id="bgColor" value="#f0f0f0">
+        <button id="setBackground">Set Background</button>
+        <button id="startPolygon">Start/End Polygon</button>
+        <button id="fillPolygon">Fill Polygon</button>
+        <button id="exportSVG">Export as SVG</button>
+        <button id="exportPNG">Export as PNG</button>
+    </div>
+    <svg id="drawingCanvas" width="500" height="500" style="background-color: #f0f0f0;"></svg>
+    <script src="script.js"></script>
+</body>
+</html>
